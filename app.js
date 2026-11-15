@@ -75,6 +75,7 @@ const I18N = {
     sb_eyebrow: 'Еркін режим', sb_title: 'Еркін алаң', sb_p: 'Идеяларыңды тексер, сабақтағы мысалдарды іске қос, тәжірибе жаса. Код осы құрылғыда сақталады.',
     sb_default: '# Еркін алаң: Python-да кез келген код жаз\n# Кіріс деректері — «Кіріс» өрісінде.\nn = int(input())\nnums = list(map(int, input().split()))\nprint("Қосындысы:", sum(nums))\nprint("Ең үлкені:", max(nums))\nprint("Өсу ретімен:", *sorted(nums))\n',
     editor_label: 'Python код редакторы', resize: 'Биіктігін өзгерту үшін тарт',
+    author: 'Авторы', author_role: 'Жобаның авторы', author_note: 'Сұрақтар мен ұсыныстарды Instagram-ға жаз',
   },
   ru: {
     nav_home: 'Классы', nav_olymp: 'Об олимпиаде', nav_sandbox: 'Песочница',
@@ -130,6 +131,7 @@ const I18N = {
     sb_eyebrow: 'Свободный режим', sb_title: 'Песочница', sb_p: 'Проверяй идеи, запускай примеры из уроков и экспериментируй. Код сохраняется на этом устройстве.',
     sb_default: '# Песочница: пиши любой код на Python\n# Входные данные — в поле «Ввод».\nn = int(input())\nnums = list(map(int, input().split()))\nprint("Сумма:", sum(nums))\nprint("Максимум:", max(nums))\nprint("По возрастанию:", *sorted(nums))\n',
     editor_label: 'Редактор кода на Python', resize: 'Потяни, чтобы изменить высоту',
+    author: 'Автор', author_role: 'Автор проекта', author_note: 'Вопросы и предложения пиши в Instagram',
   },
 };
 const ERR_HELP = {
@@ -202,6 +204,11 @@ const GRADE_ICON = {
   11: '<path d="M14 6h26v12c0 9-6 15-13 15S14 27 14 18z M27 33v8 M17 48h20 M14 10H5c0 8 4 12 10 12 M40 10h9c0 8-4 12-10 12" fill="#fff" stroke="#fff" stroke-width="4" stroke-linecap="round"/>',
 };
 
+/* ---------------- author ---------------- */
+const AUTHOR = { name: 'Ахауова Шарбану Ермухамбетовна', insta: 'https://www.instagram.com/sharbanuakhauova/', handle: '@sharbanuakhauova' };
+const INSTA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+const instaLink = (cls = '') => `<a class="insta ${cls}" href="${AUTHOR.insta}" target="_blank" rel="noopener">${INSTA_ICON}<span>${AUTHOR.handle}</span></a>`;
+
 /* ---------------- static chrome ---------------- */
 $('#brandMascot').innerHTML = mascot(42, 'happy');
 $('#brand').setAttribute('aria-label', 'АлгоТау — ' + t('home'));
@@ -209,6 +216,7 @@ $('#nav').innerHTML = `<a href="#" data-nav="home">${t('nav_home')}</a><a href="
 $('#ptsChip').title = t('pts_title');
 $('#foot1').textContent = t('foot1');
 $('#foot2').textContent = t('foot2');
+$('#foot3').innerHTML = `${t('author')}: ${esc(AUTHOR.name)} · ${instaLink()}`;
 $$('.lang button').forEach((b) => {
   b.setAttribute('aria-pressed', String(b.dataset.lang === LANG));
   b.addEventListener('click', () => {
@@ -576,6 +584,12 @@ function renderHome() {
     <div class="fact">${ic('#F2554B', '<path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2.5zM8 7h6M8 11h6"/>')}<h3>${t('f1h')}</h3><p>${t('f1p')}</p></div>
     <div class="fact">${ic('#19B571', '<path d="M20 6L9 17l-5-5"/>')}<h3>${t('f2h')}</h3><p>${t('f2p')}</p></div>
     <div class="fact">${ic('#8A4DF0', '<circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/>')}<h3>${t('f3h')}</h3><p>${t('f3p')}</p></div>
+  </section>
+
+  <section class="author" aria-label="${t('author')}">
+    <span class="ava" aria-hidden="true">ША</span>
+    <span class="who"><span class="eyebrow">${t('author_role')}</span><b>${esc(AUTHOR.name)}</b><span>${t('author_note')}</span></span>
+    ${instaLink('btn')}
   </section>`;
   $('#toGrades').addEventListener('click', () => $('#grades').scrollIntoView({ behavior: 'smooth' }));
 }

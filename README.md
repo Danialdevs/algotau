@@ -4,6 +4,10 @@
 Интерфейс и уроки на казахском (по умолчанию) и русском — переключатель ҚАЗ/РУС в шапке.
 Код учеников выполняется прямо в браузере (Python 3.12 через Pyodide в Web Worker), сервер не нужен.
 
+Автор: **Ахауова Шарбану Ермухамбетовна** · [Instagram @sharbanuakhauova](https://www.instagram.com/sharbanuakhauova/)
+
+Сайт: https://danialdevs.github.io/algotau/
+
 ## Запуск
 
 ```bash

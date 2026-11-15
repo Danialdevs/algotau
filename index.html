@@ -347,6 +347,15 @@ kbd { font: 600 .74rem/1 var(--f-mono); padding: 2px 6px; border-radius: 6px; bo
 .empty { padding: 40px; text-align: center; color: var(--muted); border: 3px dashed var(--line); border-radius: var(--r); background: var(--surface); display: grid; justify-items: center; gap: 12px; }
 footer { border-top: 3px solid var(--line); padding-block: 22px; color: var(--muted); font-size: .88rem; background: var(--surface); }
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer .foot-author { flex-basis: 100%; color: var(--ink); font-weight: 700; }
+footer .foot-author a { color: var(--blue-dark); }
+.author { margin-top: 28px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 20px 22px; background: var(--surface); border: 3px solid var(--ink); border-radius: var(--r); box-shadow: 6px 6px 0 var(--sun); }
+.author .ava { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; flex: none; background: linear-gradient(135deg, #F2554B, #FF8A1F 45%, #8A4DF0); color: #fff; font-family: var(--f-head); font-weight: 900; font-size: 1.5rem; border: 3px solid var(--ink); }
+.author .who { flex: 1 1 240px; min-width: 0; display: grid; gap: 2px; }
+.author .who b { font-family: var(--f-head); font-size: 1.2rem; }
+.author .who span { color: var(--muted); }
+.insta { display: inline-flex; align-items: center; gap: 8px; }
+.insta svg { width: 20px; height: 20px; flex: none; }
 
 @media (max-width: 1080px) {
   .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -410,6 +419,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <div class="wrap">
     <span id="foot1"></span>
     <span id="foot2"></span>
+    <span class="foot-author" id="foot3"></span>
   </div>
 </footer>
 

@@ -22,7 +22,7 @@ document.documentElement.lang = LANG;
 /* ---------------- texts ---------------- */
 const I18N = {
   kk: {
-    nav_home: 'Сыныптар', nav_olymp: 'Олимпиада туралы', nav_sandbox: 'Еркін алаң',
+    nav_home: 'Сыныптар', nav_tasks: 'Олимпиадалық тапсырмалар', nav_olymp: 'Олимпиада туралы', nav_sandbox: 'Еркін алаң',
     pts_title: 'Шешілген есептер үшін ұпайлар', home: 'Басты бет',
     py_loading: 'Python жүктелуде…', py_ready: 'Python дайын', py_fail: 'Python іске қосылмады', py_title: 'Python 3.12 тікелей браузерде жұмыс істейді',
     loading: 'Сабақтар жүктелуде…',
@@ -75,10 +75,18 @@ const I18N = {
     sb_eyebrow: 'Еркін режим', sb_title: 'Еркін алаң', sb_p: 'Идеяларыңды тексер, сабақтағы мысалдарды іске қос, тәжірибе жаса. Код осы құрылғыда сақталады.',
     sb_default: '# Еркін алаң: Python-да кез келген код жаз\n# Кіріс деректері — «Кіріс» өрісінде.\nn = int(input())\nnums = list(map(int, input().split()))\nprint("Қосындысы:", sum(nums))\nprint("Ең үлкені:", max(nums))\nprint("Өсу ретімен:", *sorted(nums))\n',
     editor_label: 'Python код редакторы', resize: 'Биіктігін өзгерту үшін тарт',
+    next: 'Келесі →', prev: '← Артқа', to_quiz: 'Тестке өту →', finish_btn: 'Аяқтау ✓', intro: 'Кіріспе', cont: 'жалғасы',
+    quiz_n: 'Өзіңді тексер · {a}-сұрақ / {b}', finish_h: 'Жарайсың! Сабақ аяқталды', finish_p: 'Енді білгеніңді есептерде байқап көр. Қоладан бастап, алтынға дейін жет!',
+    quiz_score: 'Тест: {b} сұрақтың {a}-і дұрыс', to_problem: 'Есепті шешу →', reread: 'Сабақты басынан оқу', next_topic: 'Келесі тақырып',
+    keys_reader: '<kbd>←</kbd> <kbd>→</kbd> пернелерімен немесе саусақпен сырғытып парақтауға болады.',
+    tk_eyebrow: '«Дарын» олимпиадаларынан', tk_title: 'Олимпиадалық тапсырмалар',
+    tk_p: 'Қазақстандағы информатика олимпиадаларының нағыз есептері. Әр есептің шартын өз сөзімізбен қайта жаздық, тесттер мен талдау қостық, ал түпнұсқаға сілтеме қалдырдық.',
+    tk_all: 'Барлығы', tk_src: 'Дереккөз', tk_orig: 'Түпнұсқа', tk_archive: 'Олимпиадалар мұрағаты', tk_banner_h: 'Нағыз олимпиада есептері', tk_banner_p: 'Аудандық, облыстық және республикалық кезеңдердің есептерін шешіп көр.', tk_open: 'Тапсырмаларға өту →',
+    tk_back: '← Барлық тапсырмалар', tk_solved: '{a} / {b} шешілді', tk_retold: 'Шарт қайта баяндалған: сандар мен шектеулер түпнұсқадағыдай.',
     author: 'Авторы', author_role: 'Жобаның авторы', author_note: 'Сұрақтар мен ұсыныстарды Instagram-ға жаз',
   },
   ru: {
-    nav_home: 'Классы', nav_olymp: 'Об олимпиаде', nav_sandbox: 'Песочница',
+    nav_home: 'Классы', nav_tasks: 'Олимпиадные задачи', nav_olymp: 'Об олимпиаде', nav_sandbox: 'Песочница',
     pts_title: 'Баллы за решённые задачи', home: 'Главная',
     py_loading: 'Python загружается…', py_ready: 'Python готов', py_fail: 'Python не запустился', py_title: 'Python 3.12 работает прямо в браузере',
     loading: 'Загружаю уроки…',
@@ -131,6 +139,14 @@ const I18N = {
     sb_eyebrow: 'Свободный режим', sb_title: 'Песочница', sb_p: 'Проверяй идеи, запускай примеры из уроков и экспериментируй. Код сохраняется на этом устройстве.',
     sb_default: '# Песочница: пиши любой код на Python\n# Входные данные — в поле «Ввод».\nn = int(input())\nnums = list(map(int, input().split()))\nprint("Сумма:", sum(nums))\nprint("Максимум:", max(nums))\nprint("По возрастанию:", *sorted(nums))\n',
     editor_label: 'Редактор кода на Python', resize: 'Потяни, чтобы изменить высоту',
+    next: 'Далее →', prev: '← Назад', to_quiz: 'К тесту →', finish_btn: 'Завершить ✓', intro: 'Введение', cont: 'продолжение',
+    quiz_n: 'Проверь себя · вопрос {a} из {b}', finish_h: 'Молодец! Урок пройден', finish_p: 'Теперь попробуй знания на задачах. Начни с бронзы и дойди до золота!',
+    quiz_score: 'Тест: {a} из {b} правильно', to_problem: 'Решать задачу →', reread: 'Прочитать урок сначала', next_topic: 'Следующая тема',
+    keys_reader: 'Листай стрелками <kbd>←</kbd> <kbd>→</kbd> или свайпом пальцем.',
+    tk_eyebrow: 'С олимпиад «Дарына»', tk_title: 'Олимпиадные задачи',
+    tk_p: 'Настоящие задачи олимпиад по информатике в Казахстане. Условие каждой задачи мы пересказали своими словами, добавили тесты и разбор, а ссылку на оригинал оставили.',
+    tk_all: 'Все', tk_src: 'Источник', tk_orig: 'Оригинал', tk_archive: 'Архив олимпиад', tk_banner_h: 'Настоящие олимпиадные задачи', tk_banner_p: 'Попробуй задачи районного, областного и республиканского этапов.', tk_open: 'К задачам →',
+    tk_back: '← Все задачи', tk_solved: 'Решено {a} из {b}', tk_retold: 'Условие пересказано: числа и ограничения как в оригинале.',
     author: 'Автор', author_role: 'Автор проекта', author_note: 'Вопросы и предложения пиши в Instagram',
   },
 };
@@ -212,7 +228,7 @@ const instaLink = (cls = '') => `<a class="insta ${cls}" href="${AUTHOR.insta}" 
 /* ---------------- static chrome ---------------- */
 $('#brandMascot').innerHTML = mascot(42, 'happy');
 $('#brand').setAttribute('aria-label', 'АлгоТау — ' + t('home'));
-$('#nav').innerHTML = `<a href="#" data-nav="home">${t('nav_home')}</a><a href="#olympiad" data-nav="olympiad">${t('nav_olymp')}</a><a href="#sandbox" data-nav="sandbox">${t('nav_sandbox')}</a>`;
+$('#nav').innerHTML = `<a href="#" data-nav="home">${t('nav_home')}</a><a href="#tasks" data-nav="tasks">${t('nav_tasks')}</a><a href="#olympiad" data-nav="olympiad">${t('nav_olymp')}</a><a href="#sandbox" data-nav="sandbox">${t('nav_sandbox')}</a>`;
 $('#ptsChip').title = t('pts_title');
 $('#foot1').textContent = t('foot1');
 $('#foot2').textContent = t('foot2');
@@ -228,6 +244,11 @@ $$('.lang button').forEach((b) => {
 /* ---------------- content index ---------------- */
 const IDX = {};
 function buildIndex() {
+  const O = OLY.grades.olymp;
+  if (O) O.topics.forEach((tp, ti) => {
+    IDX[tp.id] = { type: 'topic', G: O, t: tp, ti, olymp: true };
+    tp.problems.forEach((p, pi) => { IDX[p.id] = { type: 'problem', G: O, t: tp, p, ti, pi, olymp: true }; });
+  });
   for (const g of ALL_GRADES) {
     const G = OLY.grades[g];
     IDX['g' + g] = { type: 'grade', g, G };
@@ -509,12 +530,14 @@ function confetti() {
 /* ---------------- router ---------------- */
 function route() {
   const id = decodeURIComponent(location.hash.slice(1));
-  $$('.nav a').forEach((a) => a.classList.toggle('on', a.dataset.nav === (id === 'olympiad' || id === 'sandbox' ? id : (id ? '' : 'home'))));
+  $$('.nav a').forEach((a) => a.classList.toggle('on', a.dataset.nav === (IDX[id] && IDX[id].olymp ? 'tasks' : ['olympiad', 'sandbox', 'tasks'].includes(id) ? id : (id ? '' : 'home'))));
   const e = IDX[id];
   app.className = 'wrap';
   if (!id) renderHome();
   else if (id === 'olympiad') renderOlympiad();
   else if (id === 'sandbox') renderSandbox();
+  else if (id === 'tasks') renderTasks();
+  else if (e && e.olymp && e.type === 'topic') renderTasks(e.t.id);
   else if (e && e.type === 'grade') renderGrade(e);
   else if (e && e.type === 'topic') renderTopic(e);
   else if (e && e.type === 'problem') renderProblem(e);
@@ -579,6 +602,7 @@ function renderHome() {
     <div class="ascent-bands"><div class="band">${t('band_jr')}</div><div class="band rep">${t('band_rep')}</div></div>
     <div class="steps">${steps}</div>
   </section>
+  ${OLY.grades.olymp ? `<a class="tasks-banner" href="#tasks">${mascot(76, 'happy')}<span><b>${t('tk_banner_h')}</b><span>${t('tk_banner_p')}</span></span><span class="btn sun">${t('tk_open')}</span></a>` : ''}
 
   <section class="facts">
     <div class="fact">${ic('#F2554B', '<path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2.5zM8 7h6M8 11h6"/>')}<h3>${t('f1h')}</h3><p>${t('f1p')}</p></div>
@@ -783,76 +807,172 @@ function lessonBlock(b, i) {
 
 let sandboxPreset = null;
 
+/* A lesson is read card by card: short theory cards, then one quiz question per card, then a finish card. */
+function lessonSteps(tp) {
+  const sections = [];
+  tp.lesson.forEach((b, i) => {
+    if (b.type === 'h' || !sections.length) sections.push({ title: b.type === 'h' ? b.text : t('intro'), hasH: b.type === 'h', items: [] });
+    sections[sections.length - 1].items.push({ b, i });
+  });
+  const size = (b) => (b.text || b.code || '').length + (b.items ? b.items.join('').length : 0) + (b.rows ? JSON.stringify(b.rows).length : 0);
+  const steps = [];
+  sections.forEach((sec, si) => {
+    let cur = [], len = 0, part = 0;
+    const flush = () => { if (cur.length) steps.push({ kind: 'read', title: sec.title, hasH: sec.hasH, part: part++, items: cur }); cur = []; len = 0; };
+    for (const it of sec.items) {
+      // A paragraph, list or table may start a new card; code and callouts stay with the text they explain.
+      if (len >= 380 && ['p', 'list', 'table'].includes(it.b.type)) flush();
+      cur.push(it); len += size(it.b);
+    }
+    flush();
+  });
+  tp.quiz.forEach((q, qi) => steps.push({ kind: 'quiz', qi, title: t('check_self') }));
+  steps.push({ kind: 'finish', title: t('problems') });
+  return steps;
+}
+
 function renderTopic(e) {
   const { G, t: tp, ti } = e;
   document.title = `${tp.title} · ${G.grade} ${t('grade_word')} · АлгоТау`;
   app.className = 'wrap c' + G.grade;
+  const steps = lessonSteps(tp);
+  S.step = S.step || {};
+  let cur = Math.min(S.step[tp.id] || 0, steps.length - 1);
   const prevT = G.topics[ti - 1], nextT = G.topics[ti + 1];
+  const toc = [];
+  steps.forEach((s, i) => { if (s.kind === 'read' ? s.part === 0 : (s.kind === 'quiz' ? s.qi === 0 : true)) toc.push({ i, title: s.title }); });
+
   app.innerHTML = `
     <div class="crumbs"><a href="#">${t('home')}</a><span><a href="#g${G.grade}">${G.grade} ${t('grade_word')}</a></span><span>${esc(tp.title)}</span></div>
     <div class="topic-layout">
-      <article class="article">
+      <article class="article reader">
         <p class="eyebrow">${t('topic_n', { n: ti + 1, m: tp.minutes })}</p>
-        <h1 style="font-size:clamp(1.8rem,3.8vw,2.7rem)">${esc(tp.title)}</h1>
-        <p class="muted" style="font-size:1.12rem">${esc(tp.summary)}</p>
-        <div class="lesson" id="lesson">${tp.lesson.map(lessonBlock).join('')}</div>
-        <div><button class="btn ${S.read[tp.id] ? '' : 'go'}" id="markRead" type="button">${S.read[tp.id] ? t('read_done') : t('read_btn')}</button></div>
-        <h2 class="sec-h" id="quiz-h">${t('check_self')}</h2>
-        <div class="quiz" id="quiz"></div>
-        <h2 class="sec-h" id="problems-h">${t('problems')}</h2>
-        <p class="muted">${t('problems_p')}</p>
-        <div class="plist">${tp.problems.map((p) => `
-          <a class="prow" href="#${p.id}">${medal(p, true)}
-            <span><b>${esc(p.title)}</b><br><small>${lvl(p.level)} · ${LEVEL_PTS[p.level]} ${t('pts')}</small></span>
-            ${scorePill(p.id)}</a>`).join('')}</div>
-        <div class="pager">
-          ${prevT ? `<a class="btn" href="#${prevT.id}">← ${esc(prevT.title)}</a>` : `<a class="btn" href="#g${G.grade}">${t('all_topics_back')}</a>`}
-          ${nextT ? `<a class="btn primary" href="#${nextT.id}">${esc(nextT.title)} →</a>` : `<a class="btn" href="#g${G.grade}">${t('all_topics_fwd')}</a>`}
+        <h1 class="reader-title">${esc(tp.title)}</h1>
+        <div class="rprog" aria-hidden="true">${steps.map((s, i) => `<i class="k-${s.kind}" data-go="${i}"></i>`).join('')}</div>
+        <div class="rcard" id="rcard" tabindex="-1"></div>
+        <div class="rnav">
+          <button class="btn" type="button" id="rPrev">${t('prev')}</button>
+          <span class="rcount num" id="rCount"></span>
+          <button class="btn primary" type="button" id="rNext">${t('next')}</button>
         </div>
+        <p class="muted rkeys">${t('keys_reader')}</p>
       </article>
-      <aside class="side-nav">
-        <div class="side-card"><p class="eyebrow">${t('topic_progress')}</p><div class="big-pct" id="tp">${pct(topicProgress(tp))}%</div><span class="bar"><i id="tpbar" style="width:${pct(topicProgress(tp))}%"></i></span></div>
-        <div class="side-card"><p class="eyebrow" style="margin-bottom:6px">${t('in_topic')}</p>
-          <a href="#${tp.id}" data-scroll="lesson">${t('theory')}</a><a href="#${tp.id}" data-scroll="quiz-h">${t('check_self')} · ${tp.quiz.length}</a><a href="#${tp.id}" data-scroll="problems-h">${t('problems')} · ${tp.problems.length}</a></div>
+      <aside class="side-nav reader-side">
+        <div class="side-card"><p class="eyebrow">${t('topic_progress')}</p><div class="big-pct" id="tp"></div><span class="bar"><i id="tpbar"></i></span></div>
+        <div class="side-card toc"><p class="eyebrow" style="margin-bottom:6px">${t('in_topic')}</p>
+          ${toc.map((x) => `<a href="#${tp.id}" data-go="${x.i}">${esc(x.title.replace(/<[^>]+>/g, ''))}</a>`).join('')}</div>
+        <div class="side-card"><div style="display:grid;gap:8px">
+          ${prevT ? `<a href="#${prevT.id}">← ${esc(prevT.title)}</a>` : `<a href="#g${G.grade}">${t('all_topics_back')}</a>`}
+          ${nextT ? `<a href="#${nextT.id}">${esc(nextT.title)} →</a>` : `<a href="#g${G.grade}">${t('all_topics_fwd')}</a>`}
+        </div></div>
       </aside>
     </div>`;
+
+  const card = $('#rcard');
   const refresh = () => { const v = pct(topicProgress(tp)); $('#tp').textContent = v + '%'; $('#tpbar').style.width = v + '%'; };
-  $$('[data-scroll]').forEach((a) => a.addEventListener('click', (ev) => { ev.preventDefault(); $('#' + a.dataset.scroll).scrollIntoView({ behavior: 'smooth' }); }));
-  $('#markRead').addEventListener('click', (ev) => { S.read[tp.id] = true; ev.currentTarget.textContent = t('read_done'); ev.currentTarget.classList.remove('go'); save(); refresh(); });
-  $$('.codeblock').forEach((cb) => {
-    const b = tp.lesson[+cb.dataset.i];
-    cb.addEventListener('click', async (ev) => {
-      const btn = ev.target.closest('button'); if (!btn) return;
-      if (btn.dataset.act === 'tosandbox') { sandboxPreset = { code: b.code, input: b.input || '' }; location.hash = 'sandbox'; return; }
-      btn.disabled = true; btn.textContent = t('running');
-      const r = await Runner.run(b.code, b.input || '');
-      btn.disabled = false; btn.textContent = t('run');
-      let out = $('.out', cb); if (!out) { out = document.createElement('pre'); out.className = 'out'; cb.appendChild(out); }
-      out.classList.toggle('err', !r.ok);
-      out.textContent = r.ok ? (r.out || t('no_output')) : (r.out ? r.out + '\n' : '') + r.err;
-    });
-  });
-  const qbox = $('#quiz');
-  qbox.innerHTML = tp.quiz.map((q, qi) => `<div class="q" data-q="${qi}"><p class="qt">${qi + 1}. ${q.q}</p><div class="opts">${q.options.map((o, oi) => `<button class="opt" type="button" data-o="${oi}">${o}</button>`).join('')}</div><div class="why" hidden></div></div>`).join('');
-  const showQ = (qi) => {
-    const q = tp.quiz[qi], box = qbox.children[qi], chosen = S.quiz[tp.id] && S.quiz[tp.id][qi];
-    if (chosen == null) return;
+
+  function quizCard(qi) {
+    const q = tp.quiz[qi];
+    return `<p class="eyebrow">${t('quiz_n', { a: qi + 1, b: tp.quiz.length })}</p>
+      <div class="q" data-q="${qi}"><p class="qt">${q.q}</p><div class="opts">${q.options.map((o, oi) => `<button class="opt" type="button" data-o="${oi}">${o}</button>`).join('')}</div><div class="why" hidden></div></div>`;
+  }
+  function showQ(qi) {
+    const q = tp.quiz[qi], box = $('.q', card), chosen = S.quiz[tp.id] && S.quiz[tp.id][qi];
+    if (!box || chosen == null) return;
     const ok = chosen === q.answer;
-    $$('.opt', box).forEach((b, oi) => {
-      b.classList.toggle('right', oi === q.answer && ok);
-      b.classList.toggle('wrong', oi === chosen && !ok);
-    });
+    $$('.opt', box).forEach((b, oi) => { b.classList.toggle('right', oi === q.answer && ok); b.classList.toggle('wrong', oi === chosen && !ok); });
     const why = $('.why', box); why.hidden = false;
     why.innerHTML = `${mascot(44, ok ? 'happy' : 'oops')}<span>${ok ? `<b style="color:#0B7A4C">${t('right')}</b> ${q.explain}` : `<b style="color:#B42A23">${t('not_yet')}</b>`}</span>`;
-  };
-  tp.quiz.forEach((_, qi) => showQ(qi));
-  qbox.addEventListener('click', (ev) => {
-    const b = ev.target.closest('.opt'); if (!b) return;
-    const qi = +b.closest('.q').dataset.q;
-    S.quiz[tp.id] = S.quiz[tp.id] || {};
-    S.quiz[tp.id][qi] = +b.dataset.o;
-    save(); showQ(qi); refresh();
+  }
+  function finishCard() {
+    const right = tp.quiz.filter((q, qi) => S.quiz[tp.id] && S.quiz[tp.id][qi] === q.answer).length;
+    return `<div class="finish">${mascot(110, 'happy', 'bob')}
+        <div><h2>${t('finish_h')}</h2><p>${t('finish_p')}</p><p class="score-line">${t('quiz_score', { a: right, b: tp.quiz.length })}</p></div></div>
+      <div class="plist">${tp.problems.map((p) => `
+        <a class="prow" href="#${p.id}">${medal(p, true)}
+          <span><b>${esc(p.title)}</b><br><small>${lvl(p.level)} · ${LEVEL_PTS[p.level]} ${t('pts')}</small></span>
+          ${scorePill(p.id)}</a>`).join('')}</div>
+      <div class="finish-actions">
+        <a class="btn go" href="#${(tp.problems.find((p) => S.solved[p.id] !== 100) || tp.problems[0]).id}">${t('to_problem')}</a>
+        ${nextT ? `<a class="btn" href="#${nextT.id}">${t('next_topic')}: ${esc(nextT.title)} →</a>` : `<a class="btn" href="#g${G.grade}">${t('all_topics_fwd')}</a>`}
+        <button class="btn ghost" type="button" data-go="0">${t('reread')}</button>
+      </div>`;
+  }
+
+  function show(i, dir) {
+    cur = Math.max(0, Math.min(steps.length - 1, i));
+    S.step[tp.id] = cur;
+    const s = steps[cur];
+    if (s.kind === 'read') {
+      const cont = s.part > 0 || !s.hasH;
+      card.innerHTML = `<div class="lesson">${cont ? `<p class="eyebrow">${s.title}${s.part > 0 ? ' · ' + t('cont') : ''}</p>` : ''}${s.items.map(({ b, i: bi }) => lessonBlock(b, bi)).join('')}</div>`;
+    } else if (s.kind === 'quiz') {
+      card.innerHTML = quizCard(s.qi); showQ(s.qi);
+    } else {
+      const first = !S.read[tp.id];
+      S.read[tp.id] = true;
+      card.innerHTML = finishCard();
+      if (first) confetti();
+    }
+    card.classList.remove('in-l', 'in-r'); void card.offsetWidth;
+    if (dir) card.classList.add(dir > 0 ? 'in-r' : 'in-l');
+    $$('.rprog i').forEach((el, k) => { el.classList.toggle('done', k < cur); el.classList.toggle('on', k === cur); });
+    $$('.toc a').forEach((a) => { const k = +a.dataset.go; const nextK = toc.find((x) => x.i > k); a.classList.toggle('on', cur >= k && (!nextK || cur < nextK.i)); });
+    $('#rCount').textContent = `${cur + 1} / ${steps.length}`;
+    $('#rPrev').disabled = cur === 0;
+    $('#rPrev').style.visibility = cur === 0 ? 'hidden' : '';
+    const last = cur === steps.length - 1;
+    $('#rNext').style.display = last ? 'none' : '';
+    $('#rNext').textContent = steps[cur + 1] && steps[cur + 1].kind === 'finish' ? t('finish_btn') : (steps[cur + 1] && steps[cur + 1].kind === 'quiz' && s.kind === 'read' ? t('to_quiz') : t('next'));
+    save(); refresh();
+    if (dir) {
+      const top = $('.rprog').getBoundingClientRect().top;
+      if (top < 0 || top > innerHeight * 0.5) $('.rprog').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  $('#rPrev').addEventListener('click', () => show(cur - 1, -1));
+  $('#rNext').addEventListener('click', () => show(cur + 1, 1));
+  $('.topic-layout').addEventListener('click', (ev) => {
+    const g = ev.target.closest('[data-go]');
+    if (g) { ev.preventDefault(); const k = +g.dataset.go; show(k, k >= cur ? 1 : -1); }
   });
+  const onKey = (ev) => {
+    if (!document.body.contains(card)) { document.removeEventListener('keydown', onKey); return; }
+    if (ev.target.closest('input, textarea, select') || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+    if (ev.key === 'ArrowRight') { ev.preventDefault(); if (cur < steps.length - 1) show(cur + 1, 1); }
+    if (ev.key === 'ArrowLeft') { ev.preventDefault(); if (cur > 0) show(cur - 1, -1); }
+  };
+  document.addEventListener('keydown', onKey);
+  let x0 = null, y0 = null;
+  card.addEventListener('touchstart', (ev) => { if (ev.target.closest('pre, .tbl-wrap')) { x0 = null; return; } x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY; }, { passive: true });
+  card.addEventListener('touchend', (ev) => {
+    if (x0 == null) return;
+    const dx = ev.changedTouches[0].clientX - x0, dy = ev.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > 2 * Math.abs(dy)) { if (dx < 0 && cur < steps.length - 1) show(cur + 1, 1); else if (dx > 0 && cur > 0) show(cur - 1, -1); }
+  });
+
+  card.addEventListener('click', async (ev) => {
+    const opt = ev.target.closest('.opt');
+    if (opt) {
+      const qi = +opt.closest('.q').dataset.q;
+      S.quiz[tp.id] = S.quiz[tp.id] || {};
+      S.quiz[tp.id][qi] = +opt.dataset.o;
+      save(); showQ(qi); refresh();
+      return;
+    }
+    const btn = ev.target.closest('.codeblock button'); if (!btn) return;
+    const cb = btn.closest('.codeblock'), b = tp.lesson[+cb.dataset.i];
+    if (btn.dataset.act === 'tosandbox') { sandboxPreset = { code: b.code, input: b.input || '' }; location.hash = 'sandbox'; return; }
+    btn.disabled = true; btn.textContent = t('running');
+    const r = await Runner.run(b.code, b.input || '');
+    btn.disabled = false; btn.textContent = t('run');
+    let out = $('.out', cb); if (!out) { out = document.createElement('pre'); out.className = 'out'; cb.appendChild(out); }
+    out.classList.toggle('err', !r.ok);
+    out.textContent = r.ok ? (r.out || t('no_output')) : (r.out ? r.out + '\n' : '') + r.err;
+  });
+
+  show(cur, 0);
   Runner.boot();
 }
 
@@ -874,19 +994,76 @@ function showRunResult(r, ed) {
   ed.markError(r.ok ? 0 : r.line);
 }
 
+function sourceBox(src) {
+  return `<div class="source"><span class="eyebrow">${t('tk_src')}</span>
+    <span>${esc(src.olymp)} · ${esc(src.stage)} · ${esc(src.year)} · ${esc(src.grades)}${src.name ? ' · ' + esc(src.name) : ''}</span>
+    ${src.url ? `<a href="${esc(src.url)}" target="_blank" rel="noopener">${t('tk_orig')} ↗</a>` : ''}
+    <small class="muted">${t('tk_retold')}</small></div>`;
+}
+
+function renderTasks(stageId) {
+  const O = OLY.grades.olymp;
+  document.title = t('nav_tasks') + ' · АлгоТау';
+  app.className = 'wrap cO';
+  if (!O) { app.innerHTML = `<div class="empty">${mascot(90)}<p>${t('soon')}</p></div>`; return; }
+  const all = O.topics.flatMap((tp) => tp.problems);
+  const solved = all.filter((p) => S.solved[p.id] === 100).length;
+  let filter = stageId || 'all';
+  app.innerHTML = `
+    <div class="crumbs"><a href="#">${t('home')}</a><span>${t('nav_tasks')}</span></div>
+    <div class="grade-hero tasks-hero">
+      <div class="grade-num"><svg viewBox="0 0 54 54" width="72" height="72" aria-hidden="true">${GRADE_ICON[11]}</svg></div>
+      <div>
+        <p class="eyebrow">${t('tk_eyebrow')}</p>
+        <h1>${t('tk_title')}</h1>
+        <p>${t('tk_p')}</p>
+        ${O.intro ? `<p class="goal">${O.intro}</p>` : ''}
+        <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap">
+          <span class="chip pts">★ ${t('tk_solved', { a: solved, b: all.length })}</span>
+          ${O.archive ? `<a class="btn small" href="${esc(O.archive)}" target="_blank" rel="noopener">${t('tk_archive')} ↗</a>` : ''}
+        </div>
+      </div>
+      ${mascot(130, 'happy', 'bob')}
+    </div>
+    <div class="chips" role="group">
+      <button type="button" class="fchip" data-f="all">${t('tk_all')} · ${all.length}</button>
+      ${O.topics.map((tp) => `<button type="button" class="fchip" data-f="${tp.id}">${esc(tp.title)} · ${tp.problems.length}</button>`).join('')}
+    </div>
+    <div id="tlist"></div>`;
+  const draw = () => {
+    $$('.fchip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === filter)));
+    $('#tlist').innerHTML = O.topics.filter((tp) => filter === 'all' || tp.id === filter).map((tp) => `
+      <section class="stage-block">
+        <h2 class="sec-h">${esc(tp.title)}</h2>
+        <p class="muted">${tp.summary}</p>
+        <div class="plist">${tp.problems.map((p) => `
+          <a class="prow" href="#${p.id}">${medal(p, true)}
+            <span><b>${esc(p.title)}</b><br><small>${esc(p.source.year)} · ${esc(p.source.grades)} · ${lvl(p.level)}</small></span>
+            ${scorePill(p.id)}</a>`).join('')}</div>
+      </section>`).join('');
+  };
+  $('.chips').addEventListener('click', (ev) => {
+    const b = ev.target.closest('.fchip'); if (!b) return;
+    filter = b.dataset.f; draw();
+  });
+  draw();
+}
+
 function renderProblem(e) {
   const { G, t: tp, p, pi } = e;
   document.title = `${p.title} · АлгоТау`;
-  app.className = 'wrap c' + G.grade;
+  const O = e.olymp;
+  app.className = 'wrap ' + (O ? 'cO' : 'c' + G.grade);
   S.last = p.id; save();
   const attempted = S.solved[p.id] != null;
   const nextP = tp.problems[pi + 1];
   app.innerHTML = `
-    <div class="crumbs"><a href="#">${t('home')}</a><span><a href="#g${G.grade}">${G.grade} ${t('grade_word')}</a></span><span><a href="#${tp.id}">${esc(tp.title)}</a></span><span>${esc(p.title)}</span></div>
+    <div class="crumbs"><a href="#">${t('home')}</a>${O ? `<span><a href="#tasks">${t('nav_tasks')}</a></span>` : `<span><a href="#g${G.grade}">${G.grade} ${t('grade_word')}</a></span>`}<span><a href="#${tp.id}">${esc(tp.title)}</a></span><span>${esc(p.title)}</span></div>
     <div class="workspace">
       <section class="statement">
         <div class="p-title">${medal(p, true)}<div><p class="eyebrow">${lvl(p.level)} · ${LEVEL_PTS[p.level]} ${t('pts')}</p><h1 style="font-size:1.7rem;margin-top:4px">${esc(p.title)}</h1></div></div>
         <div class="limits num"><span>${t('lim_time')}</span><span>${t('lim_io')}</span><span>${t('lim_tests', { n: p.tests.length })}</span></div>
+        ${p.source ? sourceBox(p.source) : ''}
         <div>${p.statement}</div>
         <h4>${t('in_data')}</h4><div>${p.input}</div>
         <h4>${t('out_data')}</h4><div>${p.output}</div>
@@ -895,7 +1072,7 @@ function renderProblem(e) {
           <div class="ex"><div><div class="lbl">${t('ex_in')} <button class="linkbtn" type="button" data-ex="${i}">${t('paste')}</button></div><pre>${esc(x.in)}</pre></div><div><div class="lbl">${t('ex_out')}</div><pre>${esc(x.out)}</pre></div></div>`).join('')}</div>
         <details class="reveal"><summary>${t('hint')}</summary><div>${p.hint}</div></details>
         <div id="solutionBox"></div>
-        <div style="padding-top:6px">${nextP ? `<a class="btn primary" href="#${nextP.id}">${t('next_task', { t: esc(nextP.title) })}</a>` : `<a class="btn" href="#${tp.id}">${t('back_topic', { t: esc(tp.title) })}</a>`}</div>
+        <div style="padding-top:6px">${nextP ? `<a class="btn primary" href="#${nextP.id}">${t('next_task', { t: esc(nextP.title) })}</a>` : `${O ? `<a class="btn" href="#tasks">${t('tk_back')}</a>` : `<a class="btn" href="#${tp.id}">${t('back_topic', { t: esc(tp.title) })}</a>`}`}</div>
       </section>
       <section class="ide">
         <div class="ide-card">
@@ -1061,6 +1238,7 @@ async function start() {
   await Promise.all(ALL_GRADES.map(async (g) => {
     if (!(await loadScript(`content/${LANG}/grade-${g}.js`)) && LANG !== 'ru') await loadScript(`content/ru/grade-${g}.js`);
   }));
+  if (!(await loadScript(`content/${LANG}/olymp.js`)) && LANG !== 'ru') await loadScript('content/ru/olymp.js');
   buildIndex();
   route();
 }

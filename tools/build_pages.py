@@ -4,7 +4,8 @@
 index.html in the project is a page body without <!doctype>/<html>/<body>, because the
 artifact host adds that skeleton. Static hosts serve files as is, so here we wrap it.
 
-Usage: python3 tools/build_pages.py OUT_DIR
+Usage: python3 tools/build_pages.py OUT_DIR [DOMAIN]
+With DOMAIN (e.g. pystart.kz) a CNAME file is written, so GitHub Pages serves the site there.
 """
 import os, shutil, sys
 
@@ -17,7 +18,7 @@ SKELETON = ('<!doctype html>\n<html lang="kk">\n<head>\n<meta charset="utf-8">\n
 COPY = ['app.js', 'README.md', 'content', 'vendor', 'tools']
 
 
-def main(out):
+def main(out, domain=None):
     os.makedirs(out, exist_ok=True)
     for name in COPY:
         src, dst = os.path.join(ROOT, name), os.path.join(out, name)
@@ -29,8 +30,11 @@ def main(out):
     with open(os.path.join(out, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(SKELETON.replace('{}', page))
     open(os.path.join(out, '.nojekyll'), 'w').close()  # serve files as is, no Jekyll processing
-    print('built', out)
+    if domain:
+        with open(os.path.join(out, 'CNAME'), 'w') as f:
+            f.write(domain + '\n')
+    print('built', out, domain or '')
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)

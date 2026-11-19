@@ -8,7 +8,7 @@
 
 Автор: **Ахауова Шарбану Ермухамбетовна** · [Instagram @sharbanuakhauova](https://www.instagram.com/sharbanuakhauova/)
 
-Сайт: https://danialdevs.github.io/algotau/
+Сайт: https://pystart.kz/
 
 ## Запуск
 

@@ -1,4 +1,4 @@
-/* АлгоТау — olympiad informatics trainer for kids. Vanilla JS, no build step. Kazakh (default) and Russian. */
+/* PyStart — olympiad informatics trainer for kids. Vanilla JS, no build step. Kazakh (default) and Russian. */
 (() => {
 'use strict';
 
@@ -26,7 +26,7 @@ const I18N = {
     pts_title: 'Шешілген есептер үшін ұпайлар', home: 'Басты бет',
     py_loading: 'Python жүктелуде…', py_ready: 'Python дайын', py_fail: 'Python іске қосылмады', py_title: 'Python 3.12 тікелей браузерде жұмыс істейді',
     loading: 'Сабақтар жүктелуде…',
-    foot1: 'АлгоТау · информатикадан олимпиадаға дайындық, 5–11 сынып',
+    foot1: 'PyStart · информатикадан олимпиадаға дайындық, 5–11 сынып',
     foot2: 'Код браузерде орындалады (Pyodide арқылы Python 3.12). Прогресс осы құрылғыда сақталады.',
     hello: 'Сәлем! Мен — Барыс. Бірге олимпиадаға дайындаламыз!',
     hero_eyebrow: 'Информатика · 5–11 сынып',
@@ -90,7 +90,7 @@ const I18N = {
     pts_title: 'Баллы за решённые задачи', home: 'Главная',
     py_loading: 'Python загружается…', py_ready: 'Python готов', py_fail: 'Python не запустился', py_title: 'Python 3.12 работает прямо в браузере',
     loading: 'Загружаю уроки…',
-    foot1: 'АлгоТау · подготовка к олимпиадам по информатике, 5–11 класс',
+    foot1: 'PyStart · подготовка к олимпиадам по информатике, 5–11 класс',
     foot2: 'Код выполняется в браузере (Python 3.12 через Pyodide). Прогресс хранится на этом устройстве.',
     hello: 'Привет! Я Барыс. Давай вместе готовиться к олимпиаде!',
     hero_eyebrow: 'Информатика · 5–11 класс',
@@ -227,7 +227,7 @@ const instaLink = (cls = '') => `<a class="insta ${cls}" href="${AUTHOR.insta}" 
 
 /* ---------------- static chrome ---------------- */
 $('#brandMascot').innerHTML = mascot(42, 'happy');
-$('#brand').setAttribute('aria-label', 'АлгоТау — ' + t('home'));
+$('#brand').setAttribute('aria-label', 'PyStart — ' + t('home'));
 $('#nav').innerHTML = `<a href="#" data-nav="home">${t('nav_home')}</a><a href="#tasks" data-nav="tasks">${t('nav_tasks')}</a><a href="#olympiad" data-nav="olympiad">${t('nav_olymp')}</a><a href="#sandbox" data-nav="sandbox">${t('nav_sandbox')}</a>`;
 $('#ptsChip').title = t('pts_title');
 $('#foot1').textContent = t('foot1');
@@ -549,7 +549,7 @@ window.addEventListener('hashchange', route);
 
 /* ---------------- pages ---------------- */
 function renderHome() {
-  document.title = 'АлгоТау';
+  document.title = 'PyStart';
   const lastE = S.last && IDX[S.last];
   const steps = ALL_GRADES.map((g, i) => {
     const G = OLY.grades[g];
@@ -739,13 +739,13 @@ const OLYMP_PAGE = {
     </ul>`,
 };
 function renderOlympiad() {
-  document.title = t('nav_olymp') + ' · АлгоТау';
+  document.title = t('nav_olymp') + ' · PyStart';
   app.innerHTML = `<div class="crumbs"><a href="#">${t('home')}</a><span>${t('nav_olymp')}</span></div><article class="prose">${OLYMP_PAGE[LANG]()}</article>`;
 }
 
 function renderGrade(e) {
   const { g, G } = e;
-  document.title = `${g} ${t('grade_word')} · АлгоТау`;
+  document.title = `${g} ${t('grade_word')} · PyStart`;
   app.className = 'wrap c' + g;
   if (!G) {
     app.innerHTML = `<div class="crumbs"><a href="#">${t('home')}</a><span>${g} ${t('grade_word')}</span></div><div class="empty">${mascot(90, 'normal')}<p>${t('no_grade', { g })}</p></div>`;
@@ -833,7 +833,7 @@ function lessonSteps(tp) {
 
 function renderTopic(e) {
   const { G, t: tp, ti } = e;
-  document.title = `${tp.title} · ${G.grade} ${t('grade_word')} · АлгоТау`;
+  document.title = `${tp.title} · ${G.grade} ${t('grade_word')} · PyStart`;
   app.className = 'wrap c' + G.grade;
   const steps = lessonSteps(tp);
   S.step = S.step || {};
@@ -1003,7 +1003,7 @@ function sourceBox(src) {
 
 function renderTasks(stageId) {
   const O = OLY.grades.olymp;
-  document.title = t('nav_tasks') + ' · АлгоТау';
+  document.title = t('nav_tasks') + ' · PyStart';
   app.className = 'wrap cO';
   if (!O) { app.innerHTML = `<div class="empty">${mascot(90)}<p>${t('soon')}</p></div>`; return; }
   const all = O.topics.flatMap((tp) => tp.problems);
@@ -1051,7 +1051,7 @@ function renderTasks(stageId) {
 
 function renderProblem(e) {
   const { G, t: tp, p, pi } = e;
-  document.title = `${p.title} · АлгоТау`;
+  document.title = `${p.title} · PyStart`;
   const O = e.olymp;
   app.className = 'wrap ' + (O ? 'cO' : 'c' + G.grade);
   S.last = p.id; save();
@@ -1194,7 +1194,7 @@ function renderProblem(e) {
 }
 
 function renderSandbox() {
-  document.title = t('sb_title') + ' · АлгоТау';
+  document.title = t('sb_title') + ' · PyStart';
   const preset = sandboxPreset; sandboxPreset = null;
   app.innerHTML = `
     <div class="crumbs"><a href="#">${t('home')}</a><span>${t('sb_title')}</span></div>

@@ -31,5 +31,5 @@ class H(http.server.SimpleHTTPRequestHandler):
 
 
 port = int(os.environ.get('PORT') or (sys.argv[1] if len(sys.argv) > 1 else 8765))
-print(f'АлгоТау: http://localhost:{port}')
+print(f'PyStart: http://localhost:{port}')
 http.server.ThreadingHTTPServer(('127.0.0.1', port), H).serve_forever()
